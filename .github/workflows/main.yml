@@ -1,5 +1,7 @@
 name: Build and publish docker image
-on: push
+on: 
+  push: 
+    branches: [ "main" ] 
   
 jobs:
   build_and_push_docker_to_rep:
@@ -17,7 +19,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5.5.1
         with:
-          images: ewaa113/class18
+          images: ewaa113/class18(2)
       - name: Build and push Docker images
         uses: docker/build-push-action@v5.1.0
         with:
