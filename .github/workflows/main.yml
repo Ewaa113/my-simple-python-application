@@ -20,10 +20,11 @@ jobs:
         uses: docker/metadata-action@v5.5.1
         with:
           images: ewaa113/class18
+          tags-custom: latest
       - name: Build and push Docker images
         uses: docker/build-push-action@v5.1.0
         with:
           context: .
           push: true
-          tags: $images:latest 
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }} 
