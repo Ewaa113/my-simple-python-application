@@ -19,7 +19,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5.5.1
         with:
-          images: ewaa113/class18(2)
+          images: ewaa113/class18
       - name: Build and push Docker images
         uses: docker/build-push-action@v5.1.0
         with:
